@@ -50,6 +50,10 @@ public extension HTTPHandler where Self == DirectoryHTTPHandler {
     static func directory(for bundle: Bundle = .main, subPath: String = "", serverPath: String = "") -> DirectoryHTTPHandler {
         DirectoryHTTPHandler(bundle: bundle, subPath: subPath, serverPath: serverPath)
     }
+    
+    static func directory(url: URL, serverPath: String = "") -> DirectoryHTTPHandler {
+        DirectoryHTTPHandler(url: url, serverPath: serverPath)
+    }
 }
 
 public extension HTTPHandler where Self == RedirectHTTPHandler {

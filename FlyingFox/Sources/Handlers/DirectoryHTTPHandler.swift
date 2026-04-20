@@ -53,6 +53,14 @@ public struct DirectoryHTTPHandler: HTTPHandler {
         self.serverPath = serverPath
         self.cacheControl = cacheControl
     }
+    
+    public init(url: URL,
+                serverPath: String,
+                cacheControl: [HTTPCacheControl.ResponseDirective] = [.private]) {
+        self.root = url
+        self.serverPath = serverPath
+        self.cacheControl = cacheControl
+    }
 
     public func handleRequest(_ request: HTTPRequest) async throws -> HTTPResponse {
         guard
